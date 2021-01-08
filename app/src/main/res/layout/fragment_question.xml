@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="questionViewModel"
+            type="com.pepcy.nihongo.ui.learning.QuestionViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey_back"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:paddingBottom="@dimen/fragment_bottom_bar_padding"
+        tools:context=".ui.learning.QuestionFragment">
+
+
+        <TextView
+            android:id="@+id/question_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200dp"
+            android:text="@{questionViewModel.currQuestion.title}"
+            android:fontFamily="@font/sourcehansans_jp_normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/question_button1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{questionViewModel.currQuestion.items[0]}"
+            android:fontFamily="@font/sourcehansans_jp_normal"
+            android:clickable="@{!questionViewModel.answered}"
+            android:backgroundTint="@color/answer_unchosen"
+            app:layout_constraintBottom_toTopOf="@+id/question_button2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:onClick="@{() -> questionViewModel.clickItem(0)}" />
+
+        <Button
+            android:id="@+id/question_button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{questionViewModel.currQuestion.items[1]}"
+            android:fontFamily="@font/sourcehansans_jp_normal"
+            android:clickable="@{!questionViewModel.answered}"
+            android:backgroundTint="@color/answer_unchosen"
+            app:layout_constraintBottom_toTopOf="@+id/question_button3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:onClick="@{() -> questionViewModel.clickItem(1)}" />
+
+        <Button
+            android:id="@+id/question_button3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{questionViewModel.currQuestion.items[2]}"
+            android:fontFamily="@font/sourcehansans_jp_normal"
+            android:clickable="@{!questionViewModel.answered}"
+            android:backgroundTint="@color/answer_unchosen"
+            app:layout_constraintBottom_toTopOf="@+id/question_button4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:onClick="@{() -> questionViewModel.clickItem(2)}" />
+
+        <Button
+            android:id="@+id/question_button4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{questionViewModel.currQuestion.items[3]}"
+            android:fontFamily="@font/sourcehansans_jp_normal"
+            android:clickable="@{!questionViewModel.answered}"
+            android:backgroundTint="@color/answer_unchosen"
+            android:layout_marginBottom="60dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:onClick="@{() -> questionViewModel.clickItem(3)}" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

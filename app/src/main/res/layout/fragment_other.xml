@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="otherViewModel"
+            type="com.pepcy.nihongo.ui.other.OtherViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/other_constraint_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.other.OtherFragment"
+        android:padding="@dimen/activity_vertical_margin"
+        android:background="@color/grey_back" >
+
+        <Button
+            android:id="@+id/btn_setting"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/other_settings"
+            android:fontFamily="@font/sourcehansans_cn_normal"
+            android:onClick="@{() -> otherViewModel.navToSettings()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_about"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/other_about"
+            android:fontFamily="@font/sourcehansans_cn_normal"
+            android:onClick="@{() -> otherViewModel.navToAbout()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_setting" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

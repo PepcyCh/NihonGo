@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="wordViewModel"
+            type="com.pepcy.nihongo.ui.query.WordViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey_back"
+        android:paddingBottom="@dimen/fragment_bottom_bar_padding" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".ui.query.WordFragment"
+            android:padding="@dimen/activity_horizontal_margin">
+
+            <TextView
+                android:id="@+id/word_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/activity_horizontal_margin"
+                android:text="@{wordViewModel.word.title}"
+                android:textSize="36sp"
+                android:fontFamily="@font/sourcehansans_jp_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/word_add_to_set"
+                android:text="+"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/sourcehansans_cn_normal"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/word_kana"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:paddingEnd="@dimen/activity_horizontal_margin"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/word_kana"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/activity_horizontal_margin"
+                android:text="@{wordViewModel.word.kana}"
+                android:textSize="14sp"
+                android:fontFamily="@font/sourcehansans_jp_normal"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/word_title" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:overScrollMode="never"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:id="@+id/word_meaning_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/word_kana"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>

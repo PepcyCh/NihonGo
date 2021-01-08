@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/activity_horizontal_margin"
+    android:elevation="10dp"
+    app:contentPadding="5dp" >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/activity_horizontal_margin">
+
+        <TextView
+            android:id="@+id/learn_word_set_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Word Set Name"
+            android:textSize="24sp"
+            android:fontFamily="@font/sourcehansans_cn_normal"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/learn_word_set_total_str"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/learn_word_set_total"
+            android:fontFamily="@font/sourcehansans_cn_normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/learn_word_set_name" />
+
+        <TextView
+            android:id="@+id/learn_word_set_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sourcehansans_cn_normal"
+            app:layout_constraintTop_toBottomOf="@id/learn_word_set_name"
+            app:layout_constraintStart_toEndOf="@id/learn_word_set_total_str" />
+
+        <TextView
+            android:id="@+id/learn_word_set_review_str"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/learn_word_set_review"
+            android:fontFamily="@font/sourcehansans_cn_normal"
+            app:layout_constraintTop_toBottomOf="@id/learn_word_set_total_str"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/learn_word_set_review"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sourcehansans_cn_normal"
+            app:layout_constraintTop_toBottomOf="@id/learn_word_set_total"
+            app:layout_constraintStart_toEndOf="@id/learn_word_set_review_str" />
+
+        <TextView
+            android:id="@+id/learn_word_set_new_str"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/learn_word_set_new"
+            android:fontFamily="@font/sourcehansans_cn_normal"
+            app:layout_constraintTop_toBottomOf="@id/learn_word_set_review_str"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/learn_word_set_new"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sourcehansans_cn_normal"
+            app:layout_constraintTop_toBottomOf="@id/learn_word_set_review"
+            app:layout_constraintStart_toEndOf="@id/learn_word_set_new_str" />
+
+        <Button
+            android:id="@+id/learn_word_set_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/learn_word_set_start"
+            android:fontFamily="@font/sourcehansans_cn_normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/learn_word_set_new_str" />
+
+        <Button
+            android:id="@+id/learn_word_set_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/learn_word_set_settings"
+            android:fontFamily="@font/sourcehansans_cn_normal"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            app:layout_constraintTop_toBottomOf="@id/learn_word_set_new_str"
+            app:layout_constraintStart_toEndOf="@id/learn_word_set_start" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/learn_word_set_stat"
+            android:text="@string/learn_word_set_stat"
+            android:fontFamily="@font/sourcehansans_cn_normal"
+            app:layout_constraintTop_toBottomOf="@id/learn_word_set_start"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

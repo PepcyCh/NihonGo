@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_query_fragment"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/menu_query" />
+
+    <item
+        android:id="@+id/nav_learn_home_fragment"
+        android:icon="@android:drawable/ic_menu_edit"
+        android:title="@string/menu_learn" />
+
+    <item
+        android:id="@+id/nav_other_fragment"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/menu_other" />
+
+</menu>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="setSettingViewModel"
+            type="com.pepcy.nihongo.ui.learning.SetSettingViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.learning.SetSettingFragment"
+        android:background="@color/grey_back"
+        android:padding="@dimen/activity_horizontal_margin" >
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/set_barrier_vert"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:barrierDirection="right"
+            app:constraint_referenced_ids="set_name_text, set_new_text, set_ques_text, set_single_text" />
+
+        <TextView
+            android:id="@+id/set_name_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/set_name"
+            android:textSize="18sp"
+            android:fontFamily="@font/sourcehansans_cn_normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/set_name_show"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@={setSettingViewModel.setName}"
+            android:textSize="18sp"
+            android:fontFamily="@font/sourcehansans_cn_normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/set_barrier_hori1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="set_name_text, set_name_show" />
+
+        <TextView
+            android:id="@+id/set_new_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/set_new"
+            android:textSize="18sp"
+            android:fontFamily="@font/sourcehansans_cn_normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/set_barrier_hori1" />
+
+        <EditText
+            android:id="@+id/set_new_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="8"
+            android:inputType="number"
+            android:text="@={`` + setSettingViewModel.newWordsPerDay}"
+            android:textSize="18sp"
+            android:fontFamily="@font/sourcehansans_cn_normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/set_barrier_hori1" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/set_barrier_hori2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="set_new_text, set_new_edit" />
+
+        <TextView
+            android:id="@+id/set_ques_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/set_ques"
+            android:textSize="18sp"
+            android:fontFamily="@font/sourcehansans_cn_normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/set_barrier_hori2" />
+
+        <EditText
+            android:id="@+id/set_ques_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="8"
+            android:inputType="number"
+            android:text="@={`` + setSettingViewModel.questionsPerCard}"
+            android:textSize="18sp"
+            android:fontFamily="@font/sourcehansans_cn_normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/set_barrier_hori2" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/set_barrier_hori3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="set_ques_text, set_ques_edit" />
+
+        <TextView
+            android:id="@+id/set_single_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/set_single"
+            android:textSize="18sp"
+            android:fontFamily="@font/sourcehansans_cn_normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/set_barrier_hori3" />
+
+        <Switch
+            android:id="@+id/set_single_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/set_barrier_hori3"
+            android:checked="@={setSettingViewModel.questionSingleMeaning}"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/set_barrier_hori4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="set_single_text, set_single_switch" />
+
+        <Button
+            android:id="@+id/set_add_set_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/set_add_set"
+            android:fontFamily="@font/sourcehansans_cn_normal"
+            app:layout_constraintTop_toBottomOf="@id/set_barrier_hori4"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/set_save_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/save"
+            android:fontFamily="@font/sourcehansans_cn_normal"
+            android:onClick="@{() -> setSettingViewModel.saveWordSet()}"
+            android:clickable="@{!setSettingViewModel.isSaving}"
+            app:layout_constraintTop_toBottomOf="@id/set_add_set_btn"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/set_delete_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/delete"
+            android:fontFamily="@font/sourcehansans_cn_normal"
+            android:backgroundTint="@color/red"
+            android:onClick="@{() -> setSettingViewModel.deleteWordSet()}"
+            android:clickable="@{!setSettingViewModel.isSaving}"
+            app:layout_constraintTop_toBottomOf="@id/set_save_btn"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

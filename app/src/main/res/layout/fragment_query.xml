@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="queryViewModel"
+            type="com.pepcy.nihongo.ui.query.QueryViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/query_constraint_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.query.QueryFragment"
+        android:background="@color/grey_back"
+        android:paddingBottom="@dimen/fragment_bottom_bar_padding">
+
+        <EditText
+            android:id="@+id/query_word_edit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="#2C2C2C"
+            android:ems="10"
+            android:hint="@string/query_hint"
+            android:inputType="textPersonName"
+            android:paddingHorizontal="@dimen/activity_horizontal_margin"
+            android:paddingVertical="@dimen/activity_vertical_margin"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#DDDDDD"
+            android:textSize="24sp"
+            android:fontFamily="@font/sourcehansans_jp_normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/query_list_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/query_word_edit"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:paddingHorizontal="@dimen/activity_horizontal_margin"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

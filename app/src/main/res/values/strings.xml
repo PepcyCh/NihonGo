@@ -1,0 +1,87 @@
+<resources>
+    <string name="app_name">NihonGo</string>
+    <string name="menu_query">Query</string>
+    <string name="menu_learn">Learn</string>
+    <string name="menu_other">Other</string>
+
+    <string name="settings_lang">Language</string>
+    <string-array name="lang_names">
+        <item>中文</item>
+        <item>English</item>
+    </string-array>
+
+    <string name="cancel">Cancel</string>
+    <string name="waiting">Waiting</string>
+    <string name="init_waiting">Initializing…</string>
+    <string name="init_waiting_first">Initializing… (It may take some minutes at the first time)</string>
+
+    <string name="query_hint">…</string>
+
+    <string name="other_settings">Settings</string>
+    <string name="other_about">About</string>
+
+    <string name="learn_word_set_total">Total: </string>
+    <string name="learn_word_set_review">Review Today: </string>
+    <string name="learn_word_set_new">New Today: </string>
+    <string name="learn_word_set_settings">Settings</string>
+    <string name="learn_word_set_start">Start a Task</string>
+    <string name="learn_home_new">New Set</string>
+    <string name="learn_home_cannot_start"># of cards should be no less than 4</string>
+    <string name="learn_home_studied">You have studied this set today</string>
+    <string name="learn_home_cannot_stat">You have never studied this set</string>
+
+    <string name="local_result">(local result)</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+
+    <string name="set_name">Set name:</string>
+    <string name="set_new">New words per day:</string>
+    <string name="set_ques">Questions per card:</string>
+    <string name="set_single">Use single meaning:</string>
+    <string name="set_base">Base on word set:</string>
+    <string name="set_add_set">Add a set of words</string>
+
+    <string name="new_set_empty">Empty set name</string>
+    <string name="new_set_new"># of new words per day should be in 1..100</string>
+    <string name="new_set_ques"># of questions per card should be in 1..4</string>
+    <string name="new_set_dup">Duplicated set name %s</string>
+
+    <string name="res_back">Back to Home</string>
+    <string name="create">Create</string>
+
+    <string name="insert_progress_hit">Fetching words… %d/%d</string>
+    <string name="insert_duplicate_hit">Duplicated set name %s</string>
+    <string name="result_time">Time used: %d min %d sec</string>
+    <string name="result_accuracy">Accuracy %.2f%%</string>
+
+    <string name="chart_accuracy">Accuracy</string>
+    <string name="chart_new">New</string>
+    <string name="chart_review">Review</string>
+    <string name="chart_learn">Total</string>
+    <string name="chart_ratio_level0">Not learned</string>
+    <string name="chart_ratio_level1">Learned</string>
+    <string name="chart_ratio_level2">Familiar</string>
+    <string name="chart_ratio_level3">Mastered</string>
+
+    <string name="word_dup_card">Word has been in selected word set</string>
+
+    <string name="add_to_set_title">Add Word to Word Set</string>
+
+    <string name="base_set_title">Base Word Set</string>
+    <string name="learn_word_set_stat">Statistic</string>
+    <string name="stat_accuracy_per_day">Accuracy per day</string>
+    <string name="stat_ratio">Ratio of words in each level</string>
+    <string name="stat_number_per_day">Number of words learned per day</string>
+    <string name="stat_time_per_day">Time used per day (sec)</string>
+    <string-array name="base_set_names">
+        <item>Empty</item>
+        <item>Japanese Test L4</item>
+        <item>Japanese Test L3</item>
+        <item>Japanese Test L2</item>
+        <item>Japanese Test L1</item>
+        <item>Test Set</item>
+    </string-array>
+
+    <string name="app_about">NihonGo is an Android application that is developed in Kotlin. This application aims to provide a better utility to learn Japanese.</string>
+    <string name="about_back">Back</string>
+</resources>
