@@ -75,14 +75,14 @@ class SetStatFragment : Fragment() {
         for ((day, count) in viewModel.setDayData zip viewModel.setReviewCountData) {
             entriesReview.add(Entry(day.toFloat(), count.toFloat()))
         }
-        val dataSetReview = LineDataSet(entriesNew, getString(R.string.chart_review))
+        val dataSetReview = LineDataSet(entriesReview, getString(R.string.chart_review))
         dataSetReview.color = Color.parseColor("#ffff00")
 
         val entriesLearn = ArrayList<Entry>()
         for ((day, count) in viewModel.setDayData zip viewModel.setLearnCountData) {
             entriesLearn.add(Entry(day.toFloat(), count.toFloat()))
         }
-        val dataSetLearn = LineDataSet(entriesNew, getString(R.string.chart_learn))
+        val dataSetLearn = LineDataSet(entriesLearn, getString(R.string.chart_learn))
         dataSetLearn.color = Color.parseColor("#0000ff")
 
         val data = LineData(dataSetNew, dataSetReview, dataSetLearn)
