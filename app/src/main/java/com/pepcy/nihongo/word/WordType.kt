@@ -131,6 +131,7 @@ enum class WordType(val value: Int) {
                 "音" -> KANJI
                 "形" -> KEIYOU
                 "形動" -> KEIDOU
+                "形動ナリ" -> KEIDOU
                 "感" -> KAN
                 "助動" -> JODOU
                 "格助" -> JO_KAKU
@@ -145,6 +146,7 @@ enum class WordType(val value: Int) {
                 "名・形動" -> MEI_KEIDOU
                 "名・形動ナリ" -> MEI_KEIDOU
                 "副・形動" -> HUKU_KEIDOU
+                "副・形動ナリ" -> HUKU_KEIDOU
                 "名" -> MEI
                 "副" -> FUKU
                 else -> NONE

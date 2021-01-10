@@ -90,6 +90,8 @@ class SetSettingViewModel(
             )
             withContext(Dispatchers.IO) {
                 dao.deleteWordSet(wordSetEntity)
+                dao.deleteCardsInWordSet(wordSetEntity.setName)
+                dao.deleteDailyOfWordSet(wordSetEntity.setName)
             }
             _navigateToHome.value = true
         }

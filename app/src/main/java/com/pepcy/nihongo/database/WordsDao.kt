@@ -79,4 +79,9 @@ interface WordsDao {
     fun deleteWordSet(entity: WordSetEntity)
     @Delete
     fun deleteWordSetDaily(entity: WordSetDailyEntity)
+
+    @Query("DELETE FROM card WHERE setName = :setName")
+    fun deleteCardsInWordSet(setName: String)
+    @Query("DELETE FROM word_set_daily WHERE setName = :setName")
+    fun deleteDailyOfWordSet(setName: String)
 }

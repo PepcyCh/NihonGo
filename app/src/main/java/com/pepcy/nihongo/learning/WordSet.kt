@@ -30,7 +30,7 @@ class WordSet(
     val needToReview: Boolean
         get() = latestLearnDay < getDayCountOfToday()
     val newWordsToday: Int
-        get() = newWordsCount.coerceAtMost(newWordsPerDay)
+        get() = if (latestLearnDay < getDayCountOfToday()) newWordsCount.coerceAtMost(newWordsPerDay) else 0
     val studied: Boolean
         get() = newWordsCount != cardsCount
 

@@ -290,13 +290,17 @@ class WeblioCrawler(private val parseRef: Boolean = true) {
         for (title in titles) {
             val word = baseWord.clone()
 
-            if (title.startsWith("&#x")) {
-                val code = title.substring(3, 7).toInt(16)
-                word.title = code.toChar().toString()
-            } else {
-                word.title = title
+            var addedTitle = title
+            while (true) {
+                val index = addedTitle.indexOf("&#x")
+                if (index < 0) {
+                    break
+                }
+                val code = addedTitle.substring(index + 3, index + 7).toInt(16)
+                addedTitle = addedTitle.substring(0, index) + code.toChar() + addedTitle.substring(index + 8)
             }
-            word.title = title
+
+            word.title = addedTitle
             val refWord = parseWordReference(word)
             words.add(refWord ?: word)
         }
